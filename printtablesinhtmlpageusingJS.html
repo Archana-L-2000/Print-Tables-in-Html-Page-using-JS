@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="mul-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div id="table" style="display:flex;"></div>
+<body>
+    <script>
+        
+        let number=[1,2,3,4,5];
+        let mul=[1,2,3,4,,5,6,7,8,,9,10];
+        let table=[];
+        let result=[];
+        number.forEach((n)=>{
+            let table =[];
+      
+
+        let createMultiplicationLineItem=(num,mul)=>{
+            let pdt =num*mul;
+            let html="<p>"+String(num)+"x"+String(mul)+"="+String(pdt)+"</p>";
+            table.push(html);
+        };
+        mul.forEach((x) =>createMultiplicationLineItem(n,x));
+            
+
+        console.table(table);
+
+        let multiplicationTableToHtml = (table) =>
+        '<div style="padding:8px 16px;background-color:beige;margin-right:16px;">'+table.join("\n")+'</div>';
+        
+         result.push(multiplicationTableToHtml(table));
+    });
+    console.table(result);
+    document.getElementById("table").innerHTML = result.join("\n");
+    </script>
+</body>
+</html>
